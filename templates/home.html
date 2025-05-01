@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>AI Application - Home</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <nav class="navbar transparent">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <strong>AI-Enhanced Learning Assistant</strong>
+            </div>
+
+            <ul class="navbar-links">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="{{ url_for('login') }}"><i class="fas fa-user"></i> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="home">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>AI-Enhanced Learning Assistant</h1>
+                <p class="abstract-text">
+                    Our cutting-edge system leverages AI, NLP, and Machine Learning to automate the generation of context-based questions and the evaluation of student answers. It ensures fair, accurate, and efficient assessments by analyzing semantic relevance, detecting errors, and providing detailed feedback.
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="info-section">
+            <div class="info-card">
+                <h2>About Us</h2>
+                <p>Welcome to AI Enhanced Learning Assistant project, where we’re transforming the way people learn with the help of AI. Our goal is simple: to make education smarter, more personalized, and easier to access for everyone.</p>
+                <p>We’ve built an AI-enhanced learning assistant that adapts to your needs—whether you're a student, a teacher, or a lifelong learner. From answering questions and breaking down tough concepts to recommending resources and tracking progress, our assistant is designed to support your unique learning journey. </p>
+                <p>Driven by innovation and a deep belief in the power of education, our team is working to create a world where learning feels natural, intuitive, and even fun. With AI by your side, the possibilities are endless.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="info-section">
+            <div class="info-card">
+                <h2>Contact</h2>
+                <ul class="contact-list">
+                    <li><i class="fas fa-envelope"></i> ailearningassistant2025@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +91 7218761150, +91 7385311206</li>
+                    <li><i class="fas fa-phone"></i> +91 9607227223, +91 7887829221</li>
+                    <li><i class="fas fa-phone"></i> +91 7385291039 </li>
+                    <li><i class="fas fa-map-marker-alt"></i> DYPSN, Kolhapur 416007, India</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
+    <button id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+        const btn = document.getElementById('backToTop');
+        const navbar = document.querySelector('.navbar');
+        const heroSection = document.querySelector('.hero-section');
+
+        window.addEventListener('scroll', function() {
+            btn.style.display = window.scrollY > 200 ? 'block' : 'none';
+
+            if (window.scrollY > heroSection.offsetHeight - 100) {
+                navbar.classList.remove('transparent');
+            } else {
+                navbar.classList.add('transparent');
+            }
+        });
+
+        btn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    </script>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".navbar");
+            if (window.scrollY > window.innerHeight - 100) {
+                navbar.classList.remove("transparent");
+            } else {
+                navbar.classList.add("transparent");
+            }
+        });
+    </script>
+</body>
+</html>
